@@ -9,4 +9,4 @@ Here are the steps that I took.
    import os
    import matplotlib.pyplot as plt
    from sklearn.utils import shuffle
- 3. banlanced the data. Becuase most routes were straight lines. Used matplotlib to draw a histgram. Set one bin size max=700. from Removed Images: 7793 and Remaining Images: 3026
+ 3. banlanced the data. Becuase most routes were straight lines. Used matplotlib to draw a histogram. Set one bin size max=700. from Removed Images: 7793 and Remaining Images: 3026
