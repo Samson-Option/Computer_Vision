@@ -57,6 +57,16 @@ def balanceData(data,display=True):
         plt.plot((np.min(data['Steering']), np.max(data['Steering'])), (samplesPerBin, samplesPerBin))
         plt.show()
 
-data = balanceData(data, display=True)
+def loadData(path, data):
+  imagesPath = []
+  steering = []
+  for i in range(len(data)):
+    indexed_data = data.iloc[i]
+    imagesPath.append(f'{path}/IMG/{indexed_data[0]}')
+    steering.append(float(indexed_data[3]))
+  imagesPath = np.asarray(imagesPath)
+  steering = np.asarray(steering)
+  return imagesPath, steering
+imagesPath, steerings = loadData(path,data)
 
 
