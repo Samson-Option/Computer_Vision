@@ -7,7 +7,6 @@ from sklearn.model_selection import train_test_split
 path = 'Driving Data'
 data = importDataInfo(path)
 
-
 #second step
 #balance the data and create data visualization
 balanceData(data,display=False)
@@ -24,11 +23,8 @@ model = createModel()
 model.summary()
 
 #fit the model
-history = model.fit(batchGen(xTrain, yTrain, 100, 1),
-                                  steps_per_epoch=300,
-                                  epochs=10,
-                                  validation_data=batchGen(xVal, yVal, 100, 0),
-                                  validation_steps=200)
+history = model.fit(batchGen(xTrain, yTrain, 10, 1),steps_per_epoch=30,epochs=10,
+          validation_data=batchGen(xVal, yVal, 10, 0),validation_steps=20)
 
 #save the model
 model.save('model.h5')
@@ -39,3 +35,4 @@ plt.legend(['Training', 'Validation'])
 plt.title('Loss')
 plt.xlabel('Epoch')
 plt.show()
+
